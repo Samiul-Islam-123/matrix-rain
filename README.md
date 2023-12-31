@@ -1,55 +1,59 @@
 # Matrix Rain
 
-Matrix Rain is a mesmerizing visual effect inspired by the iconic "falling code" scenes in the movie "The Matrix." It creates a stunning animation of cascading characters resembling digital raindrops, with a unique color-breathing feature, making it visually appealing and dynamic.
+![Matrix Rain Preview](matrix_rain_preview.gif)
+
+Matrix Rain is a simple web application that creates a mesmerizing matrix rain effect with customizable symbols and color. Inspired by the iconic "falling code" scenes in the movie "The Matrix," this project uses HTML canvas and JavaScript to render a dynamic animation on your webpage.
 
 ## Features
 
-- **Matrix Animation:** Watch as characters fall gracefully, creating the classic Matrix code rain effect.
-  
-- **Color Breathing:** Experience a soothing color-breathing effect as the characters change colors gradually, adding an extra layer of visual elegance.
+- **Customizable Symbols:** Choose from a combination of Katakana characters, English alphabets, and numbers to create your unique matrix rain.
 
-- **Customizable:** Easily customize the font, color scheme, and animation speed to suit your preferences or integrate it into your projects seamlessly.
+- **Dynamic Color Scheme:** The matrix rain comes with a subtle color-breathing effect, making it visually appealing. Customize the color scheme to match your preferences.
 
-## How to Use
+- **Responsive Design:** The web application automatically adjusts to the size of your browser window, providing a seamless experience on various devices.
 
-1. **Include the Script:**
-   - Add the Matrix Rain script to your HTML file.
-     ```html
-     <script src="matrix_rain.js"></script>
-     ```
+## Getting Started
 
-2. **Create a Canvas:**
-   - Create an HTML canvas element with a specified ID.
-     ```html
-     <canvas id="matrixCanvas"></canvas>
-     ```
+### Prerequisites
 
-3. **Initialize Matrix Rain:**
-   - Initialize the Matrix Rain effect by calling the `drawSymbol` function.
-     ```javascript
-     const canvas = document.getElementById('matrixCanvas');
-     const context = canvas.getContext('2d');
-     const fontSize = 15;
-     const symbols = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-     const raindrops = Array.from({ length: Math.floor(canvas.width / fontSize) }, () => Math.floor(Math.random() * canvas.height));
+- Web browser (Google Chrome, Mozilla Firefox, Safari, etc.)
 
-     drawSymbol(); // Start the Matrix Rain effect
-     ```
+### Installation
 
-4. **Customize:**
-   - Adjust the parameters, such as `fontSize`, `symbols`, and `raindrops`, to customize the appearance and behavior of the Matrix Rain.
+1. Clone the repository to your local machine:
 
-5. **Enjoy:**
-   - Sit back and enjoy the captivating Matrix Rain effect on your webpage or application.
+   ```bash
+   git clone https://github.com/Samiul-Islam-123/matrix-rain.git
 
-## Examples
+## Usage
 
-Check out the [demo page](demo.html) for a live example of Matrix Rain.
+1. **Open the `index.html` file in your preferred web browser.**
 
-## License
+2. **Experience the matrix rain effect with the default settings.**
 
-Matrix Rain is licensed under the [MIT License](LICENSE).
+3. **Customize the symbols, color scheme, and other parameters by modifying the `script.js` file.**
 
-Feel free to use, modify, and share it! If you find it useful, a star would be appreciated.
+## Customization
 
----
+Adjust the following variables in the `script.js` file to customize the matrix rain:
+
+- `katakana`, `alphabets`, `numbers`: Sets of characters used in the matrix rain.
+- `fontSize`: Font size of the matrix rain symbols.
+- `fps`: Frames per second for the animation.
+- `interval`: Interval between each frame in milliseconds.
+- `context.fillStyle`: Background color of the canvas.
+- `context.fillStyle`: Color of the matrix rain symbols.
+
+```javascript
+const katakana = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワン';
+const alphabets = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const numbers = '0123456789';
+
+const symbols = katakana + alphabets + numbers;
+
+const fontSize = 14;
+const colums = canvas.width / fontSize;
+const raindrops = [];
+const fps = 20;
+const interval = 1000 / fps;
+
